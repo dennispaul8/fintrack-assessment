@@ -1,7 +1,7 @@
 const AvatarGroup = () => {
   return (
-    <div className="flex items-center gap-1">
-      {["/ava.jpg", "/liam.jpg", "/noah.jpg"].map((src, i) => (
+    <div className="flex items-center ml-2 mt-4">
+      {["/ava.png", "/liam.png", "/noah.png", "/jes.png"].map((src, i) => (
         <img
           key={i}
           src={src}
@@ -9,7 +9,9 @@ const AvatarGroup = () => {
           alt="Avatar"
         />
       ))}
-      <span className="text-sm text-gray-500">+12 others</span>
+      <span className="text-sm text-gray-500 ml-4">
+        Ava, Liam, Noah +12 others
+      </span>
     </div>
   );
 };

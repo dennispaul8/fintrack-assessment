@@ -7,10 +7,10 @@ interface Props {
 const SummaryCard = ({ title, amount, change }: Props) => {
   const isPositive = change >= 0;
   return (
-    <div className="bg-gray-200 p-4 rounded-lg  flex-1">
-      <p className="font-medium">{title}</p>
+    <div className="w-[15%] bg-gray-200 p-5 rounded-2xl">
+      <p className="font-medium pb-2">{title}</p>
       <h2 className="text-2xl font-bold">{amount}</h2>
-      <p className={isPositive ? "text-green-600" : "text-red-600"}>
+      <p className="text-[#3E7383] font-medium">
         {isPositive ? "+" : ""}
         {change}%
       </p>

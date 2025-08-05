@@ -31,31 +31,36 @@ export default function Dashboard() {
       <div className="flex-1">
         <div className="p-6 space-y-6">
           <PageHeader />
-          <div className="flex gap-4 flex-wrap">
-            <SummaryCard
-              title="Total Balance"
-              amount={`$${summary.totalBalance}`}
-              change={summary.balanceChange}
-            />
-            <SummaryCard
-              title="Total Credits"
-              amount={`$${summary.totalCredits}`}
-              change={summary.creditsChange}
-            />
-            <SummaryCard
-              title="Total Debits"
-              amount={`$${summary.totalDebits}`}
-              change={summary.debitsChange}
-            />
-            <SummaryCard
-              title="Transactions"
-              amount={`${summary.transactionCount}`}
-              change={summary.transactionChange}
-            />
+
+          <div>
+            <h2 className="font-bold ml-9 mb-2">Summary</h2>
+
+            <div className="flex gap-6 flex-wrap ml-8">
+              <SummaryCard
+                title="Total Balance"
+                amount={`$${summary.totalBalance}`}
+                change={summary.balanceChange}
+              />
+              <SummaryCard
+                title="Total Credits"
+                amount={`$${summary.totalCredits}`}
+                change={summary.creditsChange}
+              />
+              <SummaryCard
+                title="Total Debits"
+                amount={`$${summary.totalDebits}`}
+                change={summary.debitsChange}
+              />
+              <SummaryCard
+                title="Transactions"
+                amount={`${summary.transactionCount}`}
+                change={summary.transactionChange}
+              />
+            </div>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-separate border-spacing-y-2">
+            <table className="w-full text-left border-separate border-spacing-y-2 border-spacing-x-5 ">
               <thead>
                 <tr className="text-gray-600 text-sm">
                   <th
@@ -64,10 +69,10 @@ export default function Dashboard() {
                   >
                     Date <span>{sortDirection === "asc" ? "↑" : "↓"}</span>
                   </th>
-                  <th className="px-4 py-2">Remark</th>
+                  <th className="px-4 py-2 ">Remark</th>
                   <th className="px-4 py-2">Amount</th>
                   <th className="px-4 py-2">Currency</th>
-                  <th className="px-4 py-2">Type</th>
+                  <th className="px-4 py-2 w-[40px]">Type</th>
                 </tr>
               </thead>
               <tbody>

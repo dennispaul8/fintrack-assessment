@@ -14,7 +14,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 min-h-screen bg-white border-r px-4 py-6 hidden md:block">
+    <aside className="w-64 min-h-screen bg-white px-4 py-6 hidden md:block">
       {/* <div className="mb-10 px-2 text-2xl font-bold text-blue-800">
         FinTrack
       </div> */}
