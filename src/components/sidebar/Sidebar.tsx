@@ -14,19 +14,16 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 min-h-screen bg-white px-4 py-6 hidden md:block">
-      {/* <div className="mb-10 px-2 text-2xl font-bold text-blue-800">
-        FinTrack
-      </div> */}
+    <aside className="w-85 min-h-screen bg-white px-4 py-6 hidden md:block">
       <nav className="space-y-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link key={item.href} href={item.href}>
               <div
-                className={`px-4 py-2 rounded-lg cursor-pointer ${
+                className={`px-4 py-2 rounded-3xl cursor-pointer ${
                   isActive
-                    ? "bg-blue-100 text-blue-700 font-medium"
+                    ? "bg-[rgba(56,103,118,0.4)] text-[#3A6C7B] font-medium"
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
