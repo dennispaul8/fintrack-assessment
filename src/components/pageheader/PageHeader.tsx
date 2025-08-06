@@ -3,10 +3,12 @@ import AvatarGroup from "../common/AvatarGroup";
 
 const PageHeader = () => {
   return (
-    <div className="flex flex-col gap-2 ml-8">
-      <div className="flex items-center justify-between text-4xl font-bold">
-        <div className="flex items-center gap-3">
-          Wallet Ledger{" "}
+    <div className="flex flex-col gap-4 ">
+      {/* Top Row: Title + Actions */}
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-3xl md:text-4xl font-bold">
+        {/* Left Side: Title + Status */}
+        <div className="flex items-center gap-2">
+          <span>Wallet Ledger</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="13"
@@ -16,10 +18,12 @@ const PageHeader = () => {
             viewBox="0 0 16 16"
           >
             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-          </svg>{" "}
+          </svg>
           <StatusBadge />
         </div>
-        <div className="flex items-center gap-2">
+
+        {/* Right Side: Buttons */}
+        <div className="flex items-center gap-2 self-start md:self-auto">
           <button className="bg-[#4B899A] text-black cursor-pointer text-sm px-4 py-1.5 rounded-full font-medium">
             Share
           </button>
@@ -38,6 +42,7 @@ const PageHeader = () => {
         </div>
       </div>
 
+      {/* Bottom Row: Avatars */}
       <AvatarGroup />
     </div>
   );

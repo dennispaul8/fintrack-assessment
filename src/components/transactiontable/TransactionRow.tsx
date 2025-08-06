@@ -8,10 +8,8 @@ const TransactionRow = ({ tx }: Props) => {
   const isCredit = tx.type === "Credit";
 
   return (
-    <tr className="bg-white rounded text-md ">
-      <td className="px-4 py-2 border-b-2 border-gray-200 w-[60%]">
-        {tx.date}
-      </td>
+    <tr className="bg-white text-sm md:text-md ">
+      <td className="px-4 py-2 border-b-2 border-gray-200 ">{tx.date}</td>
       <td className="px-4 py-2 border-b-2 border-gray-200">{tx.remark}</td>
       <td className="px-4 py-2 border-b-2 border-gray-200">
         {tx.amount < 0 ? "-" : ""}${Math.abs(tx.amount).toLocaleString()}

@@ -9,6 +9,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import { summary } from "@/data/summary";
 import { transactions as initialTransactions } from "@/data/transactions";
 import Tab from "@/components/tabs/Tabs";
+import TransactionTable from "@/components/transactiontable/TransactionTable";
 
 export default function Dashboard() {
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
@@ -27,9 +28,8 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="min-h-screen flex">
-      <Sidebar />
-      <div className="flex-1">
+    <main className="">
+      <div className="">
         <div className="p-6 space-y-6">
           <PageHeader />
           <Tab
@@ -39,9 +39,9 @@ export default function Dashboard() {
             }}
           />
           <div>
-            <h2 className="font-bold ml-9 mb-2">Summary</h2>
+            <h2 className="font-bold mb-2">Summary</h2>
 
-            <div className="flex gap-6 flex-wrap ml-8">
+            <div className="flex flex-wrap  gap-x-6 gap-y-4  w-full justify-between">
               <SummaryCard
                 title="Total Balance"
                 amount={`$${summary.totalBalance}`}
@@ -64,9 +64,11 @@ export default function Dashboard() {
               />
             </div>
           </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-separate border-spacing-y-2 border-spacing-x-5 ">
+        </div>
+        <TransactionTable data={[]} />
+        {/* <div className="w-full overflow-x-auto">
+          <div className="min-w-[700px] md:min-w-full">
+            <table className="w-full text-left border-separate border-spacing-y-2 border-spacing-x-5">
               <thead>
                 <tr className="text-gray-400 text-sm">
                   <th
@@ -101,10 +103,10 @@ export default function Dashboard() {
                     </span>
                   </th>
 
-                  <th className="px-4 py-2 font-medium ">Remark</th>
+                  <th className="px-4 py-2 font-medium">Remark</th>
                   <th className="px-4 py-2 font-medium">Amount</th>
                   <th className="px-4 py-2 font-medium">Currency</th>
-                  <th className="px-2 py-2 w-[35px] font-medium ">Type</th>
+                  <th className="px-2 py-2 font-medium w-[80px]">Type</th>
                 </tr>
               </thead>
               <tbody>
@@ -114,7 +116,7 @@ export default function Dashboard() {
               </tbody>
             </table>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

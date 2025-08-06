@@ -1,6 +1,6 @@
 const AvatarGroup = () => {
   return (
-    <div className="flex items-center ml-2 mt-4">
+    <div className="flex items-center md:ml-2 mt-4">
       {["/ava.png", "/liam.png", "/noah.png", "/jes.png"].map((src, i) => (
         <img
           key={i}
