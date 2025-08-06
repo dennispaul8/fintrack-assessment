@@ -9,14 +9,17 @@ export default function LayoutWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
     <>
-      <Header onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)} />
+      <Header onToggleSidebar={toggleSidebar} />
       <div className="flex">
-        {isSidebarOpen && <Sidebar />}
-        <main className="flex-1 ">{children}</main>
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+        <main className="flex-1">{children}</main>
       </div>
     </>
   );
