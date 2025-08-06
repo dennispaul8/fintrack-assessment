@@ -30,7 +30,7 @@ const TransactionTable = ({ data }: Props) => {
           <thead>
             <tr className="text-gray-400 text-sm">
               <th
-                className="px-4 py-2 cursor-pointer select-none font-medium md:w-[50%]"
+                className="px-2 py-2 cursor-pointer select-none font-medium md:w-[50%]"
                 onClick={toggleSortDirection}
               >
                 Date{" "}
