@@ -11,7 +11,11 @@ const TransactionRow = ({ tx }: Props) => {
     <tr className="bg-white text-sm md:text-md ">
       <td className="px-4 py-2 border-b-2 border-gray-200 ">{tx.date}</td>
       <td className="px-4 py-2 border-b-2 border-gray-200">{tx.remark}</td>
-      <td className="px-4 py-2 border-b-2 border-gray-200">
+      <td
+        className={`px-4 py-2 border-b-2 border-gray-200 ${
+          isCredit ? "text-green-700" : "text-red-700"
+        }`}
+      >
         {tx.amount < 0 ? "-" : ""}${Math.abs(tx.amount).toLocaleString()}
       </td>
       <td className="px-4 py-2 border-b-2 border-gray-200">{tx.currency}</td>

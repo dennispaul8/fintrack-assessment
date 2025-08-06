@@ -24,7 +24,11 @@ const SummaryCard = ({ title, amount, change }: Props) => {
         </span>
       </p>
       <h2 className="text-2xl md:text-3xl font-bold">{amount}</h2>
-      <p className="text-[#3E7383] font-medium">
+      <p
+        className={`text-[#3E7383] font-medium ${
+          isPositive ? "text-green-700" : "text-red-700"
+        }`}
+      >
         {isPositive ? "+" : ""}
         {change}%
       </p>
